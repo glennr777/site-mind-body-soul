@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const common = require('./webpack.common.js');
 
-const mapsAPIKey = 'AIzaSyAD8DxGFKa-SaBTbw_xZX3aSrjZfoyL9B8&';
+const mapsAPIKey = '';
 
 const config =
   merge(common, {

@@ -14,8 +14,8 @@
   
   /* colours */
   /* https://coolors.co/palette/ffbe0b-fb5607-ff006e-8338ec-3a86ff */
-  --clr-1: rgb(14, 149, 135);
-  --clr-1-g: radial-gradient(circle, rgba(14, 149, 135,1) 0%, rgba(4,55,53,1) 95%);
+  --clr-1: rgb(157, 199, 179);
+  --clr-1-g: radial-gradient(circle, rgba(157,199, 179, 1) 0%, rgba(122,156,140,1) 95%);
   --clr-1-a: rgba(14, 149, 135, 0.5);
   --clr-2: rgb(85 36 29);
   --clr-2-a: rgba(85, 36, 29, 0.5);
@@ -156,6 +156,7 @@ html {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    transform: translateZ(0);
     position: fixed;
     width: 100%;
     height: var(--nav-height);
@@ -292,6 +293,8 @@ html {
     padding: 0;
     position: relative;
     overflow-x: hidden;
+    background: var(--clr-1-g);
+    background-attachment: fixed;
     color: var(--clr-2-b);
 
     & a {
@@ -306,7 +309,6 @@ html {
       flex: 1 1 auto;
       padding: 0;;
       color: var(--clr-10);
-      background: url(~/src/img/img7.jpg);
       background-size: cover;
       background-position: center;
       text-align: center;
@@ -326,7 +328,7 @@ html {
           height: 50vh;
           height: 50svh;
           width: 50vw;
-          margin: auto 5vw auto auto;
+          margin: auto;
         }
 
         & p.subheading {
@@ -383,9 +385,6 @@ html {
 
     /* About */
     & #main-content {
-      background: var(--clr-1-g);
-      background-attachment: fixed;
-      box-shadow: 0 -10px 5em var(--clr-1);
       color: var(--clr-2);
       display: flex;
       flex-direction: column;

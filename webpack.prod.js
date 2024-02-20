@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const common = require('./webpack.common.js');
 
-const mapsAPIKey = 'AIzaSyAD8DxGFKa-SaBTbw_xZX3aSrjZfoyL9B8&';
+const mapsAPIKey = '';
 
 const config =
   merge(common, {
