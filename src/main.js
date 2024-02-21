@@ -25,15 +25,15 @@ const debouceScroll = () => {
 document.getElementById('navButton').addEventListener('click', menuClick);
 document.body.parentNode.classList.add('ready');
 
-document.getElementById('open_cancellation').addEventListener('click', (e) => {
+[...document.getElementsByClassName('dialog-opener')].forEach((el) => el.addEventListener('click', (e) => {
   e.preventDefault();
-  document.getElementById('cancellation').showModal();
-});
+  document.getElementById(el.attributes['aria-controls'].value).showModal();
+}));
 
-document.getElementById('close_cancellation').addEventListener('click', (e) => {
+[...document.getElementsByClassName('dialog-closer')].forEach((el) => el.addEventListener('click', (e) => {
   e.preventDefault();
-  document.getElementById('cancellation').close();
-});
+  el.parentNode.close();
+}));
 
 updateScroll();
 

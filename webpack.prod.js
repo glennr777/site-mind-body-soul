@@ -3,13 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const InlineChunkHtmlPlugin = require('inline-chunk-html-plugin');
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default;
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const RemovePlugin = require('remove-files-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 const common = require('./webpack.common.js');
-
-const mapsAPIKey = '';
 
 const config =
   merge(common, {
@@ -26,9 +25,6 @@ const config =
         inject: 'body',
         filename: 'index.html',
         scriptLoading: 'defer',
-        templateParameters: {
-          mapsAPIKey: '',
-        }
       }),
       new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/.+[.]js/]),
       new HTMLInlineCSSWebpackPlugin(),
@@ -45,6 +41,18 @@ const config =
       minimizer: [
         new TerserPlugin({
           test: /\.js(\?.*)?$/i,
+        }),
+        new ImageMinimizerPlugin({
+          test: /\.jpe?g/i,
+          minimizer: {
+            implementation: ImageMinimizerPlugin.sharpMinify,
+            options: {
+              encodeOptions: {
+                // Your options for `sharp`
+                // https://sharp.pixelplumbing.com/api-output
+              },
+            },
+          },
         }),
         new CssMinimizerPlugin(),
       ],

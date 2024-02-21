@@ -21,10 +21,10 @@ module.exports = {
         }
       },
       {
-        test: /\.(jpg|png)$/,
-        type: 'asset/resource',
+        test: /\.(jpe?g|png)$/,
+        type: 'asset',
         generator: {
-          filename: 'images/[name][ext]'
+          filename: 'images/[hash]-[name].[ext]'
         }
       },
     ]
@@ -35,3 +35,5 @@ module.exports = {
     port: 3000
   },
 };
+
+// https://www.freepik.com/free-ai-image/vibrant-colorful-bouquet-showcases-nature-summer-beauty-generated-by-ai_41055733.htm#from_view=detail_alsolike

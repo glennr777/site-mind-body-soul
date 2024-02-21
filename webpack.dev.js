@@ -4,8 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const common = require('./webpack.common.js');
 
-const mapsAPIKey = '';
-
 const config =
   merge(common, {
     mode: 'development',
@@ -16,9 +14,6 @@ const config =
           template: './src/index.template.ejs',
           inject: 'html',
           inlineSource: '.(js|css)$',
-          templateParameters: {
-            mapsAPIKey: '',
-          }
         }),
       ],
   });
