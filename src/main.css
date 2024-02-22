@@ -4,7 +4,7 @@
   /* dims */
   --min-desktop: 1170px;
   --max-desktop: 1280px;
-  --max-item-width: 800px;
+  --max-item-width: 1050px;
   --nav-height: 3em;
   --nav-height-mobile: 2em;
   --socials: 3em;
@@ -13,6 +13,8 @@
   --txtSize12px: 0.75em;
   --txtSize14px: 0.875em;
   --txtSize16px: 1em;
+
+  --lineHeight20px: 1.25em;
   
   /* colours */
   /* https://coolors.co/palette/ffbe0b-fb5607-ff006e-8338ec-3a86ff */
@@ -496,6 +498,7 @@ html {
         & p {
           margin-top: 0;
           font-size: var(--txtSize14px);
+          line-height: var(--lineHeight20px);
           @media(--small-device) {
             font-size: var(--txtSize12px);
           }
@@ -543,14 +546,16 @@ html {
           background: var(--clr-10);
           width: 100%;
           max-width: var(--max-item-width);
-          height: clamp(20em, 60vh, 30em);
+          max-width: min(var(--max-item-width), 85vw);
+          height: max(20em, min(70vh, 40em));
           padding: 40px 20px;
           border-radius: 10px;
           box-shadow: 0px 3px 5px var(--clr-2-a);
           @media(--small-device) {
             padding: 0;
             flex: 0 1 auto;
-            min-height: 80vh;
+            height: max(20em, min(85vh, 40em));
+            max-width: min(var(--max-item-width), 100vw);
             & > * {
               padding-left: 20px;
               padding-right: 20px;
