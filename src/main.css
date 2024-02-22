@@ -510,6 +510,9 @@ html {
           &.eft {
             background-image: svg-load("img/logo_eft.svg");
           }
+          &.aor {
+            background-image: svg-load("img/logo_aor.svg");
+          }
 
         }
         
