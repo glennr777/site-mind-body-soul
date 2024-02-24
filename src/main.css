@@ -69,6 +69,23 @@ html {
     font-display: swap;
   }
 
+  & #unsupported {
+    display: none;
+    position: absolute;
+    background: var(--clr-10);
+    color: var(--clr-2);
+    padding: 10px;
+    border: var(--borderR);
+    z-index: 1;
+    top: 4em;
+    margin: auto;
+    left: auto;
+    right: auto;
+  }
+  &.unsupported #unsupported {
+    display: block;
+  }
+
   & h1 {
     text-align: center;
     user-select: none;

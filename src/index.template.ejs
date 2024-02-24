@@ -22,6 +22,9 @@
     <link rel="shortcut icon" href="<%= require('./img/favicon.ico').default %>">
     <script>
       document.documentElement.classList.add('js');
+      if (typeof HTMLDialogElement !== 'function') {
+        document.documentElement.classList.add('unsupported');
+      }
     </script>
   </head>
 
@@ -54,6 +57,8 @@
           </ul>
         </div>
     </nav>
+
+    <div id="unsupported">Unfortunately your browser does not support by this website.  Please ensure you are using an up to date version of Chrome/Edge/Safari/FireFox.</div>
 
     <header id="page-top">
       <div class="header-content">
