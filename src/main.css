@@ -500,7 +500,7 @@ html {
             background-position: center;
           }
         }
-        &#contact-us .container-header .copy::after {
+        &#contact .container-header .copy::after {
           background-image: url(~/src/img/img9.jpg);
         }
 
