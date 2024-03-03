@@ -23,6 +23,7 @@
   --clr-1-a: rgba(14, 149, 135, 0.5);
   --clr-2: rgb(85, 36, 29);
   --clr-2-a: rgba(85, 36, 29, 0.5);
+  --clr-2-a-a: rgba(85, 36, 29, 0.25);
   --clr-2-b: rgb(12, 5, 4);
   --clr-3: rgb(167 75 51);
   --clr-4: rgb(78 65 135);
@@ -177,10 +178,10 @@ html {
     border-bottom: 1px solid transparent;
     will-change: opacity;
     z-index: 3;
-    box-shadow: 0px 0px 15px var(--clr-2-a);
     &.scrolled {
       background-color: var(--clr-10);
       border-bottom-color: var(--clr-2-a);
+      box-shadow: 0px 0px 15px var(--clr-2-a);
     }
     margin: 0 auto;
     display: flex;
@@ -204,6 +205,7 @@ html {
       font-weight: 500;
       font-size: var(--txtSize14px);
       transition: 700ms background-color;
+      text-shadow: 0px 0px 5px var(--clr-2);
       @media(--small-device) {
         color: var(--clr-2-b);
         font-size: 1.25em;
@@ -216,6 +218,7 @@ html {
     }
     &.scrolled a {
       color: var(--clr-2);
+      text-shadow: none;
       &:hover,
       &:focus {
         color: var(--clr-10);
@@ -346,6 +349,8 @@ html {
       background-position: center;
       text-align: center;
       overflow: hidden;
+      box-shadow: 0 5px 5px var(--clr-2-a-a);
+
 
       & .header-content {
         width: 100%;
@@ -363,6 +368,8 @@ html {
           height: 400px;
           width: 400px;
           margin: auto auto auto 20vw;
+          box-shadow: 0 10px 10px var(--clr-2-a);
+          border: 1px solid var(--clr-2-a-a);
         }
 
         & p.subheading {
