@@ -501,6 +501,12 @@ html {
         &#reiki .container-header .copy::after {
           background-image: url(~/src/img/img5.jpg);
         }
+        &#indheadmassage .container-header .copy::after {
+          background-image: url(~/src/img/img14.jpg);
+          @media(--small-device) {
+            background-position: center;
+          }
+        }
         &#price-list .container-header .copy::after {
           background-image: url(~/src/img/img11.jpg);
           @media(--small-device) {
@@ -578,7 +584,7 @@ html {
           @media(--small-device) {
             padding: 0;
             flex: 0 1 auto;
-            height: max(20em, min(85vh, 40em));
+            height: max(20em, min(90vh, 50em));
             max-width: min(var(--max-item-width), 100vw);
             & > * {
               padding-left: 20px;
